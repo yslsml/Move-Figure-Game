@@ -24,6 +24,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Up">
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="upButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRJ-VW-5ju"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiD-Yz-zMo">
                                 <rect key="frame" x="162" y="775" width="68" height="35"/>
@@ -33,6 +36,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Down">
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="downButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C2F-8e-TpV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8O-Ec-4jV">
                                 <rect key="frame" x="244" y="739" width="64" height="35"/>
@@ -42,6 +48,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Right">
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="078-iP-sv3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRO-zz-3HD">
                                 <rect key="frame" x="91" y="739" width="54" height="35"/>
@@ -51,11 +60,25 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Left">
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="leftButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fo-Ly-5t7"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eif-Tz-dru">
+                                <rect key="frame" x="64" y="147" width="261" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Eif-Tz-dru" id="4Ob-lh-vV3"/>
+                        <outlet property="upButton" destination="dEa-ot-Qaf" id="Fc3-7z-Zdg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
