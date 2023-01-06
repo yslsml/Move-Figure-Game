@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     let step: CGFloat = 30
     
     //MARK: - lifecycle funcs
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.messageLabel.text = ""
         self.createFugure()
     }
@@ -54,7 +54,6 @@ class ViewController: UIViewController {
     }
     
     private func move(direction: Direction) {
-        let dynamicIslandHeight = 45
         switch direction {
         case .left:
             if figure.frame.origin.x - step > 0 {
@@ -71,7 +70,7 @@ class ViewController: UIViewController {
                 showMessageError(.right)
             }
         case .up:
-            if Int(figure.frame.origin.y - step) - dynamicIslandHeight > 0 {
+            if figure.frame.origin.y - step - self.view.safeAreaInsets.top > 0 {
                 figure.frame.origin.y -= step
                 showMessageDirection(.up)
             } else {
