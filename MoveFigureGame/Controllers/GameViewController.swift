@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var messageLabel: UILabel!
@@ -23,6 +23,22 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.messageLabel.text = ""
         self.createFugure()
+        
+        let upSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(upSwipeDetected))
+        upSwipeRecognizer.direction = .up
+        self.view.addGestureRecognizer(upSwipeRecognizer)
+        
+        let downSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(downSwipeDetected))
+        downSwipeRecognizer.direction = .down
+        self.view.addGestureRecognizer(downSwipeRecognizer)
+        
+        let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipeDetected))
+        leftSwipeRecognizer.direction = .left
+        self.view.addGestureRecognizer(leftSwipeRecognizer)
+        
+        let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeDetected))
+        rightSwipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(rightSwipeRecognizer)
     }
 
     //MARK: - IBActions
@@ -40,6 +56,26 @@ class ViewController: UIViewController {
     
     @IBAction func rightButtonPressed(_ sender: UIButton) {
         move(direction: .right)
+    }
+    
+    @IBAction func upSwipeDetected() {
+        move(direction: .up)
+    }
+    
+    @IBAction func downSwipeDetected() {
+        move(direction: .down)
+    }
+    
+    @IBAction func leftSwipeDetected() {
+        move(direction: .left)
+    }
+    
+    @IBAction func rightSwipeDetected() {
+        move(direction: .right)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - flow funcs
